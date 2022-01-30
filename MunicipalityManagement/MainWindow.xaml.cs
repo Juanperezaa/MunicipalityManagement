@@ -52,6 +52,7 @@ namespace MunicipalityManagement
             ListView.Visibility = Visibility.Visible;
             ListView2.Visibility = Visibility.Hidden;
             Filter.Visibility = Visibility.Visible;
+            Graphic.Visibility = Visibility.Visible;
             countAgain();
         }
 
@@ -96,9 +97,10 @@ namespace MunicipalityManagement
             int a = 0;
             int b = 0;
             int c = 0;
-            for (int i= 0;i<finalInfo.Count;i++)
+            for (int i = 0; i < finalInfo.Count; i++)
             {
-                if (finalInfo[i].type.Equals("Isla")){
+                if (finalInfo[i].type.Equals("Isla"))
+                {
                     a++;
                 }
                 else if (finalInfo[i].type.Equals("Municipio"))
@@ -110,12 +112,15 @@ namespace MunicipalityManagement
                     c++;
                 }
             }
-
-            MessageBox.Show("Municipios " + b + "Islas " + a + "else "+ c);
         }
 
         private void Graphic_Click(object sender, RoutedEventArgs e)
         {
+
+            Page1 newPage=new Page1();
+            this.Close();
+            newPage.Show();
+           
             
         }
     }

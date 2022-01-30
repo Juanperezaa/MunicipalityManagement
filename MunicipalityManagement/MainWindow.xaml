@@ -51,7 +51,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button x:Name="Graphic" Content="Cargar" HorizontalAlignment="Left" Margin="31,208,0,0" VerticalAlignment="Top" Height="40" Width="110" FontFamily="Times New Roman" FontSize="14" Background="#FFBCD9F9" Click="Graphic_Click"/>
+        <Button x:Name="Graphic" Content="Reporte" Visibility="Hidden" HorizontalAlignment="Left" Margin="54,141,0,0" VerticalAlignment="Top" Height="40" Width="78" FontFamily="Times New Roman" FontSize="14" Background="#FFBCD9F9" Click="Graphic_Click"/>
     </Grid>
 
 

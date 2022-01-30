@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 namespace MunicipalityManagement
 {
    
-    public partial class Page1 : Page
+    public partial class Page1 : Window
     {
         public Page1()
         {
@@ -26,7 +26,19 @@ namespace MunicipalityManagement
 
         private void back_Click(object sender, RoutedEventArgs e)
         {
+            MainWindow newPage = new MainWindow();
+            this.Close();
+            newPage.Show();
+        }
 
+        private void Pane_Initialized(object sender, EventArgs e)
+        {
+            IslandRec.Width = 30;
+            IslandRec.Height = 38;
+            MunicipalityRec.Width = 383;
+            MunicipalityRec.Height = 38;
+            NoMRec.Width = 162;
+            NoMRec.Height = 38;
         }
     }
 }
