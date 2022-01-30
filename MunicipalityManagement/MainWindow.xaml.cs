@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Data;
 using System.IO;
 using System.Windows;
 using Microsoft.Win32;
@@ -13,8 +15,11 @@ namespace MunicipalityManagement
     {
         string filePath = "";
         OpenFileDialog ofd = new OpenFileDialog();
-        //List<var> information = new List<var>;
-        
+        List<String> finalInfo = new List<string>();
+        DataTable data = new DataTable();
+        string separator = ",";
+        string[] Header;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -27,24 +32,37 @@ namespace MunicipalityManagement
                 //Get the path of specified file
                 filePath = ofd.FileName;
                 //txtEditor.Text=filePath;
-                MessageBox.Show(filePath);
+                //MessageBox.Show(filePath);
+                ReadCsv();
+            }
+            
+        }
+
+        private void ReadCsv()
+        {
+            var Reader = new StreamReader(File.OpenRead(filePath));
+            
+            Header = Reader.ReadLine().Split(separator);
+            while (Reader.ReadLine != null)
+            {
+                String temp = Reader.ReadLine();
+                finalInfo.Add(temp);
+            }
+            CreateTable();
+        }
+
+        private void CreateTable() {
+            for (int i = 0; i < Header.Length; i++)
+            {
+                data.Columns.Add(Header[i], typeof(String));
+            }
+            for(int i = 0; i < finalInfo.Count; i++)
+            {
+                string[] temp = finalInfo[i].Split(separator);
+                data.Rows.Add(temp[0],temp[1],temp[2],temp[3],temp[4]);
             }
         }
 
-        private void ReadCsv() {
-            var Reader = new StreamReader(File.OpenRead(filePath));
-            string separator = ",";
-            string Header = ",";
-            Header = Reader.ReadLine();
-            
-           
-           
 
-
-
-
-        }
-
-      
     }
 }

@@ -7,7 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid x:Name="First" Background="White">
-        <Button x:Name="Click1" Content="Select path" HorizontalAlignment="Center" VerticalAlignment="Bottom" Click="Button_Click" Height="83" Width="130" FontSize="22" FontFamily="Times New Roman" BorderBrush="#FF0C0C0C" Background="#FFD85252" Margin="0,120,0,0"/>
-        <DataGrid x:Name="Table" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,0,0,88" BorderBrush="White" Foreground="Black" Background="White"/>
+        <Button x:Name="Click1" Content="Rellenar base de datos" HorizontalAlignment="Right" VerticalAlignment="Top" Click="Button_Click" Height="83" Width="130" FontSize="22" FontFamily="Times New Roman" BorderBrush="#FF0C0C0C" Background="#FFD85252" Margin="0,217,35,0"/>
+        <DataGrid x:Name="Table" Margin="10,0,0,71" BorderBrush="White" Foreground="Black" Background="White" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="248">
+
+        </DataGrid>
     </Grid>
 </Window>
