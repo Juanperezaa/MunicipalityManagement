@@ -5,10 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MunicipalityManagement"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Button x:Name="LoaderBtn" Content="Button" HorizontalAlignment="Center" Margin="0,332,0,0" VerticalAlignment="Top" Click="LoaderBtn_Click"/>
-        <ListView x:Name="ListView" d:ItemsSource="{Binding}" Margin="0,0,0,138" >
+        Title="DIVIPOLA" Height="450" Width="800">
+    <Grid Background="#FF616996" HorizontalAlignment="Right" Width="800">
+        <Button x:Name="LoaderBtn" Content="Cargar" HorizontalAlignment="Left" Margin="370,361,0,0" VerticalAlignment="Top" Click="LoaderBtn_Click" Height="40" Width="110" FontFamily="Times New Roman" FontSize="14" Background="#FFBCD9F9"/>
+        <ListView x:Name="ListView" d:ItemsSource="{Binding}" Margin="200
+                  ,57,0,98" HorizontalAlignment="Left" VerticalAlignment="Stretch" Visibility="Visible" FontFamily="Times New Roman" Background="White">
             <ListView.View>
                 <GridView AllowsColumnReorder="False">
                     <GridViewColumn Header="Codigo Departamento" Width="Auto" DisplayMemberBinding="{Binding Path=departmentCode}"/>
@@ -17,11 +18,40 @@
                     <GridViewColumn Header="Nombre Municipio" Width="Auto" DisplayMemberBinding="{Binding Path=municipalityName}"/>
                     <GridViewColumn Header="Tipo" Width="Auto" DisplayMemberBinding="{Binding Path=type}"/>
                 </GridView>
-
             </ListView.View>
 
         </ListView>
 
+        <ComboBox x:Name="CB" HorizontalAlignment="Left" Margin="54,41,0,0" VerticalAlignment="Top" Width="120" Height="35" FontFamily="Times New Roman" >
+            <ComboBox.Background>
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Color="#FFF0F0F0"/>
+                    <GradientStop Color="#FF9BC8D4" Offset="1"/>
+                </LinearGradientBrush>
+            </ComboBox.Background>
+        </ComboBox>
+        <Button x:Name="Filter" Content="Filtrar" Margin="56,86,680,0" VerticalAlignment="Top" Visibility="Hidden" Click="Button_Click" Height="39" RenderTransformOrigin="0.5,0.027" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Normal">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.592"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <ListView x:Name="ListView2" d:ItemsSource="{Binding}" Visibility="Hidden" HorizontalContentAlignment="Center" VerticalContentAlignment="Stretch" Margin="200,57,0,98" HorizontalAlignment="Left" Width="517">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Codigo Departamento" Width="Auto" DisplayMemberBinding="{Binding Path=departmentCode}"/>
+                    <GridViewColumn Header="Codigo Municipio" Width="Auto" DisplayMemberBinding="{Binding Path=municipalityCode}"/>
+                    <GridViewColumn Header="Nombre Departamento" Width="Auto" DisplayMemberBinding="{Binding Path=departmentName}"/>
+                    <GridViewColumn Header="Nombre Municipio" Width="Auto" DisplayMemberBinding="{Binding Path=municipalityName}"/>
+                    <GridViewColumn Header="Tipo" Width="Auto" DisplayMemberBinding="{Binding Path=type}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="Graphic" Content="Cargar" HorizontalAlignment="Left" Margin="31,208,0,0" VerticalAlignment="Top" Height="40" Width="110" FontFamily="Times New Roman" FontSize="14" Background="#FFBCD9F9" Click="Graphic_Click"/>
     </Grid>
 
 
