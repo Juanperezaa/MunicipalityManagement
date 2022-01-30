@@ -6,10 +6,23 @@
         xmlns:local="clr-namespace:MunicipalityManagement"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid x:Name="First" Background="White">
-        <Button x:Name="Click1" Content="Rellenar base de datos" HorizontalAlignment="Right" VerticalAlignment="Top" Click="Button_Click" Height="83" Width="130" FontSize="22" FontFamily="Times New Roman" BorderBrush="#FF0C0C0C" Background="#FFD85252" Margin="0,217,35,0"/>
-        <DataGrid x:Name="Table" Margin="10,0,0,71" BorderBrush="White" Foreground="Black" Background="White" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="248">
+    <Grid>
+        <Button x:Name="LoaderBtn" Content="Button" HorizontalAlignment="Center" Margin="0,332,0,0" VerticalAlignment="Top" Click="LoaderBtn_Click"/>
+        <ListView x:Name="ListView" d:ItemsSource="{Binding}" Margin="0,0,0,138" >
+            <ListView.View>
+                <GridView AllowsColumnReorder="False">
+                    <GridViewColumn Header="Codigo Departamento" Width="Auto" DisplayMemberBinding="{Binding Path=departmentCode}"/>
+                    <GridViewColumn Header="Codigo Municipio" Width="Auto" DisplayMemberBinding="{Binding Path=municipalityCode}"/>
+                    <GridViewColumn Header="Nombre Departamento" Width="Auto" DisplayMemberBinding="{Binding Path=departmentName}"/>
+                    <GridViewColumn Header="Nombre Municipio" Width="Auto" DisplayMemberBinding="{Binding Path=municipalityName}"/>
+                    <GridViewColumn Header="Tipo" Width="Auto" DisplayMemberBinding="{Binding Path=type}"/>
+                </GridView>
 
-        </DataGrid>
+            </ListView.View>
+
+        </ListView>
+
     </Grid>
+
+
 </Window>
